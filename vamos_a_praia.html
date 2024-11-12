@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos à Praia Hoje?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+
+        .message {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .next-step {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="message" id="question">
+        Vamos à praia hoje?
+    </div>
+
+    <button id="yesBtn">Sim</button>
+    <button id="noBtn">Não</button>
+
+    <div id="noMessage" class="hidden">
+        Nem adiantar tentar falar não.
+    </div>
+
+    <div id="nextStep" class="hidden next-step">
+        <p>Eu avisei, agora que você aceitou ir comigo na praia por livre e espontânea vontade, me encontre no metrô às 12h, Jardim de Alah.</p>
+        <p>Caso não possa esse horário, entre em contato comigo ou me encontre no P11.</p>
+    </div>
+
+    <script>
+        // Função para lidar com o clique no "Sim"
+        document.getElementById("yesBtn").onclick = function() {
+            document.getElementById("nextStep").classList.remove("hidden");
+            document.getElementById("question").classList.add("hidden");
+            document.getElementById("yesBtn").classList.add("hidden");
+            document.getElementById("noBtn").classList.add("hidden");
+            document.getElementById("noMessage").classList.add("hidden");
+        };
+
+        // Função para lidar com o clique no "Não"
+        document.getElementById("noBtn").onclick = function() {
+            document.getElementById("noMessage").classList.remove("hidden");
+        };
+    </script>
+</body>
+</html>
